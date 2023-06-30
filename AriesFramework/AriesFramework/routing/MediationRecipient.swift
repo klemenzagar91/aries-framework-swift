@@ -144,6 +144,7 @@ class MediationRecipient {
         let message = MediationRequestMessage(sentTime: Date())
         let mediationRecord = MediationRecord(state: .Requested, role: .Mediator, connectionId: connection.id, threadId: connection.id, invitationUrl: agent.agentConfig.mediatorConnectionsInvite!)
         try await repository.save(mediationRecord)
+        agent.agentDelegate?.onMediationStateChanged(mediationRecord: mediationRecord)
 
         return OutboundMessage(payload: message, connection: connection)
     }

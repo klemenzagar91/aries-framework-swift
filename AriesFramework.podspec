@@ -12,7 +12,7 @@ Pod::Spec.new do |spec|
   spec.source       = { :git => "https://github.com/hyperledger/aries-framework-swift.git", :tag => 'v1.2.1' }
   spec.source_files = "AriesFramework/AriesFramework/**/*.{h,swift}"
 
-  spec.dependency   "Indy", "1.16.2"
+  spec.dependency   "Indy", "1.16.3"
   spec.dependency   "Base58Swift", "~> 2.1"
   spec.dependency   "WebSockets", "~> 0.5.0"
   spec.dependency   "CollectionConcurrencyKit", "~> 0.2.0"

@@ -116,7 +116,11 @@ public class Agent {
         self._isInitialized = true
     }
 
-    func receiveMessage(_ encryptedMessage: EncryptedMessage) async throws {
+    /// Kamino chagne
+    /// Change access control from default to `public`.
+    /// Why? So we can enable receiving of mock JSON messages.
+    /// This is only needed until we have a working mediator.
+    public func receiveMessage(_ encryptedMessage: EncryptedMessage) async throws {
         try await messageReceiver.receiveMessage(encryptedMessage)
     }
 
